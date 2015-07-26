@@ -9,7 +9,6 @@ class Chronology < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
-  depends_on :xcode
 
   resource "cffi" do
     url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.2.tar.gz"
