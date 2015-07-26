@@ -1,7 +1,7 @@
-class Timetravel < Formula
+class Chronology < Formula
   desc "File watcher for git repositories"
-  homepage "https://bitbucket.org/xyziemba/timetravel"
-  url "https://bitbucket.org/xyziemba/timetravel/get/HEAD.zip"
+  homepage "https://bitbucket.org/xyziemba/chronology"
+  url "https://bitbucket.org/xyziemba/chronology/get/HEAD.zip"
   version "0.0.1"
   #sha256 "" # todo: provide a hash once there's a real version of this
 
@@ -56,7 +56,7 @@ class Timetravel < Formula
     #
     # This test will fail and we won't accept that! It's enough to just replace
     # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test timetravel`. Options passed
+    # were more thorough. Run the test with `brew test chronology`. Options passed
     # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
     #
     # The installed folder is not in the path, so use the entire path to any
