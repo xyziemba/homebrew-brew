@@ -1,7 +1,7 @@
 class Chronology < Formula
   desc "File watcher for git repositories"
-  homepage "https://bitbucket.org/xyziemba/chronology"
-  url "https://bitbucket.org/xyziemba/chronology/get/HEAD.zip"
+  homepage "https://github.com/xyziemba/chronology"
+  url "https://github.com/xyziemba/chronology/archive/master.zip"
   version "0.0.1"
   #sha256 "" # todo: provide a hash once there's a real version of this
 
