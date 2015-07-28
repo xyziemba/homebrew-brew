@@ -9,6 +9,7 @@ class Chronology < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
+  depends_on "cmake" => :build
 
   resource "cffi" do
     url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.2.tar.gz"
@@ -35,10 +36,39 @@ class Chronology < Formula
     sha256 "d3290bd4a027fa0b3a2e2ee87728056fe49d4112640e2b8c2ea4dd94ba0cf057"
   end
 
+  resource "libgit2" do
+    url "https://github.com/libgit2/libgit2/archive/v0.22.3.tar.gz"
+    sha256 "511fe60e7c12c3525b4e0489861e5c1fe0e331d604bee9a3dfb8420c2f288f60"
+  end
+
   def install
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
-    resources.each do |r|
-      r.stage do
+    
+    resource("libgit2").stage do
+      args = std_cmake_args
+      args << "-DBUILD_CLAR=NO" # Don't build tests.
+      # This is app local, so use libexec
+      args << "-DCMAKE_INSTALL_PREFIX:PATH=#{libexec}"
+      # Install_name_dir tells the linker that this library can be found in a
+      # known location when something links to it. This option ensures that
+      # pygit2 can find the library
+      args << "-DCMAKE_INSTALL_NAME_DIR=#{libexec}/lib/"
+
+      if build.universal?
+        ENV.universal_binary
+        args << "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.universal_archs.as_cmake_arch_flags}"
+      end
+
+      mkdir "build" do
+        system "cmake", "..", *args
+        system "make", "install"
+      end
+    end
+
+    ENV["LIBGIT2"] = libexec
+
+    %w[cffi pycparser psutil pygit2 pyuv].each do |r|
+      resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
