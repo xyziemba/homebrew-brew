@@ -3,6 +3,7 @@ class Chronology < Formula
   homepage "https://github.com/xyziemba/chronology"
   url "https://github.com/xyziemba/chronology/archive/master.zip"
   version "0.0.1"
+  #env :std # Needed because cffi needs to find `brew`, and it isn't available in superenv
   #sha256 "" # todo: provide a hash once there's a real version of this
 
   depends_on :python if MacOS.version <= :snow_leopard
@@ -10,6 +11,7 @@ class Chronology < Formula
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
   depends_on "cmake" => :build
+  depends_on "libffi"
 
   resource "cffi" do
     url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.2.tar.gz"
