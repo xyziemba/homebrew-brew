@@ -24,8 +24,8 @@ class Chronology < Formula
   end
 
   resource "pygit2" do
-    url "https://pypi.python.org/packages/source/p/pygit2/pygit2-0.22.1.tar.gz"
-    sha256 "f2533544a10a6dedb8f6eb36bc569285fd14294a72eebc0dc713281eb13ce476"
+    url "https://pypi.python.org/packages/source/p/pygit2/pygit2-0.23.0.tar.gz"
+    sha256 "90101a7a4b3c3563662c4047d5b6c52d84d9150570a7262e88892c604545dcb2"
   end
 
   resource "pyuv" do
@@ -39,8 +39,8 @@ class Chronology < Formula
   end
 
   resource "libgit2" do
-    url "https://github.com/libgit2/libgit2/archive/v0.22.3.tar.gz"
-    sha256 "511fe60e7c12c3525b4e0489861e5c1fe0e331d604bee9a3dfb8420c2f288f60"
+    url "https://github.com/libgit2/libgit2/archive/v0.23.0.tar.gz"
+    sha256 "49d75c601eb619481ecc0a79f3356cc26b89dfa646f2268e434d7b4c8d90c8a1"
   end
 
   def install
