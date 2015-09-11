@@ -2,7 +2,7 @@ class Chronology < Formula
   desc "File watcher for git repositories"
   homepage "https://github.com/xyziemba/chronology"
   url "https://github.com/xyziemba/chronology/archive/master.zip"
-  version "0.0.2"
+  version "0.0.3"
   env :std # Needed because cffi needs to find `brew`, and it isn't available in superenv
   #sha256 "" # todo: provide a hash once there's a real version of this
 
