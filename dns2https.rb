@@ -40,31 +40,31 @@ class Dns2https < Formula
             </array>
         <key>KeepAlive</key>
         <true/>
-            <key>Sockets</key>
+        <key>Sockets</key>
+        <dict>
+            <key>UdpListener</key>
             <dict>
-                <key>UdpListener</key>
-                <dict>
-                    <key>SockNodeName</key>
-                    <string>127.0.0.1</string>
-                    <key>SockServiceName</key>
-                    <string>domain</string>
-                    <key>SockType</key>
-                    <string>dgram</string>
-                    <key>SockFamily</key>
-                    <string>IPv4</string>
-                </dict>
-                <key>TcpListener</key>
-                <dict>
-                    <key>SockNodeName</key>
-                    <string>127.0.0.1</string>
-                    <key>SockServiceName</key>
-                    <string>domain</string>
-                    <key>SockType</key>
-                    <string>stream</string>
-                    <key>SockFamily</key>
-                    <string>IPv4</string>
-                </dict>
+                <key>SockNodeName</key>
+                <string>127.0.0.1</string>
+                <key>SockServiceName</key>
+                <string>domain</string>
+                <key>SockType</key>
+                <string>dgram</string>
+                <key>SockFamily</key>
+                <string>IPv4</string>
             </dict>
+            <key>TcpListener</key>
+            <dict>
+                <key>SockNodeName</key>
+                <string>127.0.0.1</string>
+                <key>SockServiceName</key>
+                <string>domain</string>
+                <key>SockType</key>
+                <string>stream</string>
+                <key>SockFamily</key>
+                <string>IPv4</string>
+            </dict>
+        </dict>
       </dict>
     </plist>
     EOS
