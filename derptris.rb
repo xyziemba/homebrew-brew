@@ -6,8 +6,9 @@ require "language/go"
 class Derptris < Formula
   desc ""
   homepage ""
-  url "https://github.com/xyziemba/derptris.git"
-  version "0.0.1"
+  url "https://github.com/xyziemba/derptris.git",
+      :revision => "162c304730ad4fcb33d0eb73b262b89c92b19113"
+  version "0.0.2"
   sha256 ""
 
   depends_on "go" => :build
